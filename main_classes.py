@@ -62,6 +62,9 @@ class Employee:
     self.employee_id = employee_id
     self.onboarding_program = onboarding_program
 
+    for parameter in parameters:
+      setattr(self, parameter, None)
+
   def __str__(self):
     """
     Returns a string representation of the Employee object with onboarding details.
@@ -71,6 +74,20 @@ class Employee:
     """
     return f"Employee: {self.name} - Email: {self.email} - Department: {self.department} \nOnboarding Program: {self.onboarding_program}"
 
+
+
+all_employees = []
+
+
+
+
+
+parameters=[]
+
+
+def add_parameters():
+  para=input("enter parameter")
+  parameters.append(para)
 
 name=input("enter name") 
 email=input("enter email") 
@@ -106,7 +123,9 @@ onboarding_program = Onboarding(
 
 
 
-employee=Employee(name,email,dept,title,st,emp_id,onboarding_program)
+employee=Employee(name,email,dept,title,st,emp_id,onboarding_program,parameters)
+
+all_employees.append(employee)
 
 
 
